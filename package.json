@@ -1,6 +1,6 @@
 {
   "name": "timajs",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "⏱0.3KB timer library without dependencies",
   "main": "index.js",
   "repository": {
