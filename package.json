@@ -1,5 +1,5 @@
 {
-  "name": "tima",
+  "name": "timajs",
   "version": "1.0.1",
   "description": "⏱0.3KB timer library without dependencies",
   "main": "index.js",
