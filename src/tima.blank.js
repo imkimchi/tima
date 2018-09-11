@@ -5,9 +5,12 @@ export default function tima (option) {
     if(!$container) throw new Error(`Container doesn't exists.`)
     
     let days, hours, minutes, seconds
-    endDate = new Date(option.endDate).getTime()
-  
-    if (isNaN(endDate)) throw new Error('Invalid end date.')
+    let endTime = new Date(option.endDate).getTime()
+
+    console.log("option.endDate", option.endDate)
+    console.log("endTime", endTime)
+
+    if (isNaN(endTime)) throw new Error('Invalid end date.')
   
     calculate()
     let timer = setInterval(calculate, 1000)
@@ -17,7 +20,7 @@ export default function tima (option) {
   
       let startDate = new Date()
       startDate = startDate.getTime()
-      let timeRemaining = parseInt((endDate - startDate) / 1000)
+      let timeRemaining = parseInt((endTime - startDate) / 1000)
       
       if (timeRemaining >= 0) {
         days = parseInt(timeRemaining / 86400)
