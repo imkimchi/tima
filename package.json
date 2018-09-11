@@ -1,0 +1,19 @@
+{
+  "name": "tima",
+  "version": "1.0.0",
+  "description": "⏱0.3KB timer library without dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imkimchi/tima.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imkimchi/tima/issues"
+  },
+  "homepage": "https://github.com/imkimchi/tima#readme"
+}
