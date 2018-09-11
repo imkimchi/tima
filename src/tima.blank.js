@@ -1,14 +1,9 @@
 export default function tima (option) {
     option.append.insertAdjacentHTML('afterend', getTemplate(option.text))
-
-    let $container = document.querySelector(option.container)
-    if(!$container) throw new Error(`Container doesn't exists.`)
+    if(!option.append) throw new Error(`elem doesn't exists.`)
     
     let days, hours, minutes, seconds
     let endTime = new Date(option.endDate).getTime()
-
-    console.log("option.endDate", option.endDate)
-    console.log("endTime", endTime)
 
     if (isNaN(endTime)) throw new Error('Invalid end date.')
   
@@ -37,19 +32,20 @@ export default function tima (option) {
         appendNumber(document.getElementById("seconds"), seconds)
         removeZeroDigit()
       } else {
-        $container.parentNode.removeChild($container)
+        const widget = document.getElementById('countdown-widget')
+        widget.parentNode.removeChild(widget)
         clearInterval(timer)
       }
     }
   
     function getTemplate (text) {
       return `<style>
-        #countdown {
+        #countdown-widget {
           padding: 10px 0;
           text-align: center;
         }
     
-        #countdown .digit {
+        #countdown-widget .digit {
           font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif!important;
           font-size: 45px;
           font-weight: 600;
@@ -57,25 +53,25 @@ export default function tima (option) {
           margin-bottom: 0;
         }
     
-        #countdown .text {
+        #countdown-widget .text {
           font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif!important;
           text-transform: uppercase;
           margin-bottom: 0;
           font-size: 17px;
         }
     
-        #countdown li p {
+        #countdown-widget li p {
           margin: 0;
         }
     
-        #countdown li {
+        #countdown-widget li {
           display: inline-block;
           margin: 0 8px;
           text-align: center;
           position: relative;
         }
     
-        #countdown li:after {
+        #countdown-widget li:after {
           content: ":";
           position: absolute;
           top: 22px;
@@ -84,7 +80,7 @@ export default function tima (option) {
           vertical-align: -50%;
         }
     
-        #countdown li:last-of-type:after {
+        #countdown-widget li:last-of-type:after {
           content: "";
         }
   
@@ -94,7 +90,7 @@ export default function tima (option) {
         }
   
       </style>
-      <div id="countdown">
+      <div id="countdown-widget">
         <h2 id="text">${text}</h2>
         <li>
           <p class="digit" id="days"></p>
