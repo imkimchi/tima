@@ -39,6 +39,8 @@ export default function tima (option) {
     }
   
     function getTemplate (text) {
+      const platform = window.location.host.split('.')[0] === 'm' ? 'mobile' : 'desktop'
+      
       return `<style>
         #countdown-widget {
           padding: 10px 0;
@@ -79,6 +81,10 @@ export default function tima (option) {
           font-size: 32px;
           vertical-align: -50%;
         }
+
+        #countdown-widget.mobile li:after {
+          top: 21px;
+        }
     
         #countdown-widget li:last-of-type:after {
           content: "";
@@ -91,7 +97,7 @@ export default function tima (option) {
         }
   
       </style>
-      <div id="countdown-widget">
+      <div id="countdown-widget" class="${platform}">
         <h2 id="text">${text}</h2>
         <li>
           <p class="digit" id="days"></p>
