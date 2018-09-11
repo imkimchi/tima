@@ -1,11 +1,13 @@
 # tima
-⏱0.3KB timer library without dependencies
+⏱0.5KB timer library without dependencies
 
 # Usage
 
 ```
 tima('#timer', '09/11/2018 11:30:00 AM') // parse automatically
 ```
+
+Super simple to use, put selector and specify end date. That's really it.
 
 # Installation
 
