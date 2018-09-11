@@ -4,16 +4,11 @@
 # Usage
 
 ```
-<div id="container">
-  <span id="days"></span>
-  <span id="hours"></span>
-  <span id="minutes"></span>
-  <span id="seconds"></span>
-</div>
+<div id="timer"></div>
 
 <script src="//cdn.jsdelivr.net/npm/timajs/src/tima.min.js"></script>
 <script>
-  tima('09/11/2018 11:30:00 AM') // parse automatically
+  tima('#timer', '09/11/2018 11:30:00 AM') // parse automatically
 </script>
 ```
 
