@@ -41,7 +41,7 @@ function tima (container, endDate) {
 
   function init (container) {
     ['days', 'hours', 'minutes', 'seconds'].forEach(time => {
-      let el = document.createElement('h1')
+      let el = document.createElement('span')
       el.setAttribute('id', time)
       container.appendChild(el)
     })
