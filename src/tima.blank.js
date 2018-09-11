@@ -74,7 +74,7 @@ export default function tima (option) {
         #countdown-widget li:after {
           content: ":";
           position: absolute;
-          top: 22px;
+          top: 9px;
           right: -13px;
           font-size: 32px;
           vertical-align: -50%;
@@ -85,8 +85,9 @@ export default function tima (option) {
         }
   
         #text {
-          padding: 4px 0;
-          font-weight: 400;
+          font-size: 22px;
+          font-weight: 500;
+          font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif!important;
         }
   
       </style>
@@ -117,8 +118,10 @@ export default function tima (option) {
     }
   
     function removeZeroDigit () {
-      let allElem = document.querySelectorAll('#countdown li')
-  
+      let allElem = document.querySelectorAll('#countdown-widget li')
+
+
+
       if(allElem.length === 4) {
         let firstElem = allElem[0]
         let firstDigit = firstElem.querySelector('p').innerText
